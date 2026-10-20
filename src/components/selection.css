@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+  background-color: #fff0f6;
+  background-image: radial-gradient(#ffc2da 2px, transparent 2px);
+  background-size: 28px 28px;
+}
+
+.main-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.selection-title{
+    font-family:Fuzzy Bubbles;
+    text-align: center;
+    color:rgb(40, 39, 39);
+}
+.frame-1,.frame-2,.frame-3{
+    transition: transform 0.3s ease;
+     width:380px;
+}
+.frame-1:hover, .frame-2:hover,.frame-3:hover{
+    transform: scale(1.1);
+}
+.frame-1:active, .frame-2:active, .frame-3:active {
+  transform: scale(0.95);
+}
+
+ .next-btn {
+  width: 150px;
+  height: 46px;
+  font-size: 18px;
+  font-family: "Fuzzy Bubbles", cursive;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 999px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #7fd0ff 0%, #33b2f6 100%);
+  box-shadow:
+    0 5px 0 #1f93d6,
+    0 10px 20px rgba(51, 178, 246, 0.4);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+/* glossy highlight */
+.next-btn {
+  width: 150px;
+  height: 46px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Fuzzy Bubbles", cursive;
+  color: #fff;
+  border-radius: 999px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #ffc2da 0%, #ff8fb8 100%);
+  box-shadow:
+    0 5px 0 #e0628f,
+    0 10px 20px rgba(255, 143, 184, 0.45);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.next-btn::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 14%;
+  width: 72%;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.next-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow:
+    0 8px 0 #e0628f,
+    0 14px 24px rgba(255, 143, 184, 0.55);
+}
+
+.next-btn:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 1px 0 #e0628f,
+    0 3px 8px rgba(255, 143, 184, 0.35);
+}

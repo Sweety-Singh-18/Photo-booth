@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Pixelify+Sans:wght@400..700&display=swap');
+
+.smile-txt{
+    font-family: Fuzzy Bubbles;
+    text-align: center;
+    color:rgb(40, 39, 39);
+}
+.main-grid{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    
+}
+.camera-grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.vid{
+    margin-bottom: 30px;
+    border: 5px solid rgb(236, 236, 236);
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: rotate(-1.5deg);
+}
+
+.frame-grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.download-btn,
+.capture-btn {
+  min-width: 170px;
+  height: 46px;
+  padding: 0 22px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-family: "Fuzzy Bubbles", cursive;
+  color: #c46a96;                        /* dusty rose text */
+  background: #fffaf0;                   /* cream */
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 5px 0 #e6d9c4, 0 10px 18px rgba(255, 179, 217, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* stitched dashed border */
+.download-btn::after,
+.capture-btn::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 2px dashed #f2a9c9;         
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+/* decorations before the text */
+.capture-btn::before  { content: "✿ "; }
+.download-btn::before { content: "♡ "; }
+
+/* hover: lift and tilt */
+.capture-btn:hover,
+.download-btn:hover {
+  transform: translateY(-3px) rotate(-2deg);
+  box-shadow: 0 8px 0 #e6d9c4, 0 14px 22px rgba(255, 179, 217, 0.5);
+}
+.download-btn:hover { transform: translateY(-3px) rotate(2deg); }
+
+/* hover: kaomoji */
+.capture-btn:hover::before  { content: "(๑˃ᴗ˂)ﻭ "; }
+.download-btn:hover::before { content: "⸜(｡˃ ᵕ ˂ )⸝♡ "; }
+
+/* press down */
+.capture-btn:active,
+.download-btn:active {
+  transform: translateY(4px) scale(0.97);
+  box-shadow: 0 1px 0 #e6d9c4, 0 3px 8px rgba(255, 179, 217, 0.3);
+}
+.frame-wrapper {
+    position: relative;
+    width: 400px;
+}
+
+.frame-wrapper .frame {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 2;             
+    pointer-events: none;
+}
+.slot-photo {
+    position: absolute;
+    z-index: 1;
+    left: 30.5%;
+    width: 40%;
+    object-fit: cover;
+}
+
+.slot-1 { top: 15%;   height: 22.5%; }
+.slot-2 { top: 41.5%; height: 22%; }
+.slot-3 { top: 69%;   height: 23%; }
+
+@media (max-width: 768px) {
+    .main-grid {
+        flex-direction: column;  
+        padding: 10px 0 40px;
+    }
+
+    .vid {
+        width: 260px;         
+        height: 260px;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
+    .frame-wrapper {
+        width: 280px;      
+    }
+
+    .frame-grid {
+        margin-top: 30px;
+    }
+}
